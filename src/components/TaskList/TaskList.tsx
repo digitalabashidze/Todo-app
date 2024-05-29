@@ -1,5 +1,11 @@
 import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
+import {
+	DragDropContext,
+	Droppable,
+	Draggable,
+	DropResult,
+} from 'react-beautiful-dnd'
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../../redux/store'
 import {
@@ -11,14 +17,8 @@ import {
 } from '../../redux/taskSlice'
 import CustomCheckbox from '../CustomCheckbox/CustomCheckbox'
 import deleteIcon from '../../assets/images/icon-cross.svg'
-import styles from './TaskList.module.css'
 import Filters from '../Filters/Filters'
-import {
-	DragDropContext,
-	Droppable,
-	Draggable,
-	DropResult,
-} from 'react-beautiful-dnd'
+import styles from './TaskList.module.css'
 
 const TaskList = () => {
 	const isTabletOrMobile = useMediaQuery({ maxWidth: 768 })

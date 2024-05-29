@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { addTask } from '../../redux/taskSlice'
-import styles from './Input.module.css'
 import CustomCheckbox from '../CustomCheckbox/CustomCheckbox'
+import styles from './Input.module.css'
 
 const Input = () => {
 	const [taskText, setTaskText] = useState('')

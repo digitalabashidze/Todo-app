@@ -1,19 +1,20 @@
-import { useSelector, useDispatch } from 'react-redux'
-import { RootState } from '../../redux/store'
-import { toggleDarkMode } from '../../redux/themeSlice'
+import { useState } from 'react'
 import moonIcon from '../../assets/images/icon-moon.svg'
 import sunIcon from '../../assets/images/icon-sun.svg'
-import useTheme from '../../hooks/useTheme'
 import styles from './ThemeToggleBtn.module.css'
 
 const ThemeToggleBtn = () => {
-	const isDarkMode = useSelector((state: RootState) => state.theme.isDarkMode)
-	const dispatch = useDispatch()
-
-	useTheme(isDarkMode ? 'dark' : 'light')
+	const [isDarkMode, setIsDarkMode] = useState(false)
 
 	const toggleTheme = () => {
-		dispatch(toggleDarkMode())
+		setIsDarkMode(prevMode => !prevMode) // Toggle between true and false
+	}
+
+	// Apply dark-mode class to body element based on isDarkMode state
+	if (isDarkMode) {
+		document.body.classList.add('dark-mode')
+	} else {
+		document.body.classList.remove('dark-mode')
 	}
 
 	return (
