@@ -1,0 +1,59 @@
+.taskList {
+	background-color: var(--background-app);
+	box-shadow: var(--box-shadow);
+	border-radius: 0.3125rem;
+	overflow: hidden;
+	transition: all 0.2s ease-in;
+}
+
+.task {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.25rem 1.5rem;
+	border-bottom: 1px solid #e3e4f1;
+	transition: background-color 0.3s;
+	color: var(--text-color-base);
+	transition: all 0.2s ease-in;
+}
+
+.task-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.task-wrapper span {
+	cursor: pointer;
+}
+
+.task.completed {
+	text-decoration: line-through;
+	color: var(--text-color-light);
+	transition: all 0.2s ease-in;
+}
+
+.delete-button {
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.task:hover .delete-button {
+	opacity: 1;
+}
+
+@media (max-width: 768px) {
+	.taskList {
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	.task {
+		padding: 1rem 1.25rem;
+		font-size: 0.75rem;
+		letter-spacing: -0.01044rem;
+	}
+	.delete-button {
+		width: 0.75rem;
+	}
+}

@@ -1,0 +1,10 @@
+.footer {
+	padding: 3rem;
+}
+
+.footer p {
+	text-align: center;
+	font-size: 0.875rem;
+	letter-spacing: -0.01213rem;
+	color: var(--text-color-medium);
+}
